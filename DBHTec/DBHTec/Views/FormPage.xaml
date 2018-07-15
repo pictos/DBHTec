@@ -1,0 +1,30 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="DBHTec.Views.FormPage"
+             Title="Formulário de Dados"
+             BackgroundColor="Azure">
+
+    <ContentPage.ToolbarItems>
+        <ToolbarItem Name="Política de Privacidade" Command="{Binding PoliticaCommand}"/>
+    </ContentPage.ToolbarItems>
+    <ContentPage.Content>
+        <StackLayout>
+            <ActivityIndicator IsEnabled="{Binding IsBusy}"
+                               IsVisible="{Binding IsBusy}"
+                               IsRunning="{Binding IsBusy}"/>
+
+            <Entry Placeholder="Entre com a quantidade de gravidez"  Text="{Binding Gravidez}" />
+            <Entry Placeholder="Entre com o Plasma de Glicose"       Text="{Binding PlasmaG}" />
+            <Entry Placeholder="Entre com o tamanho do triceps(cm)"  Text="{Binding Triceps}" />
+            <Entry Placeholder="Entre com a Insulina Serica"         Text="{Binding InsulinaSerica}" />
+            <Entry Placeholder="Entre com o IMC (kg/m²)"             Text="{Binding BMI}" />
+            <Entry Placeholder="Entre com o Pedigree de Diabetes"    Text="{Binding DiabPedigree}" />
+            <Entry Placeholder="Entre com a pressão sanguinea(mmHg)" Text="{Binding PressaoSangue}" />
+            <Entry Placeholder="Entre com a idade do paciente"       Text="{Binding Idade}" />
+
+            <Button Text="Teste" Command="{Binding ServicoCommand}"/>
+
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>
