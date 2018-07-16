@@ -45,14 +45,18 @@ namespace DBHTec.ViewModels
         private void Carregar(Output1 valor)
         {
             var prob      = double.Parse(valor.Probabilidade);
-            probabilidade = $"Chance de estar com diabetes: {string.Format(new CultureInfo("pt-BR"),"{0:N2}",prob*100)}% \n";
+            probabilidade = $"Chance do paciente estar com diabetes: {string.Format(new CultureInfo("pt-BR"),"{0:N2}",prob*100)}% \n";
             if (prob > 0.60)
             {
                 Cor = Color.Red;
-                probabilidade += "\n Sugerimos que você procure um médico para avaliar melhor sua situação!";
+                probabilidade += "\n O paciente está em uma situação de risco!";
             }
             else
+            {
                 Cor = Color.Black;
+                probabilidade += "\n O paciente não está em uma situação de risco.";
+
+            }
         }
     }
 }

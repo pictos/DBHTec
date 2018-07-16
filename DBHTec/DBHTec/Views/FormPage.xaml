@@ -5,25 +5,37 @@
              Title="Formulário de Dados"
              BackgroundColor="Azure">
 
+    <ContentPage.Resources>
+        <ResourceDictionary>
+            <Style TargetType="Entry">
+                <Setter Property="Keyboard"  Value="Numeric"/>
+                <Setter Property="MaxLength" Value="10"/>
+                <Setter Property="PlaceholderColor" Value="Red"/>
+            </Style>
+        </ResourceDictionary>
+    </ContentPage.Resources>
+
     <ContentPage.ToolbarItems>
         <ToolbarItem Name="Política de Privacidade" Command="{Binding PoliticaCommand}"/>
     </ContentPage.ToolbarItems>
     <ContentPage.Content>
-        <StackLayout>
+        <StackLayout Padding="10">
             <ActivityIndicator IsEnabled="{Binding IsBusy}"
                                IsVisible="{Binding IsBusy}"
                                IsRunning="{Binding IsBusy}"/>
 
-            <Entry Placeholder="Entre com a quantidade de gravidez"  Text="{Binding Gravidez}" />
-            <Entry Placeholder="Entre com o Plasma de Glicose"       Text="{Binding PlasmaG}" />
-            <Entry Placeholder="Entre com o tamanho do triceps(cm)"  Text="{Binding Triceps}" />
-            <Entry Placeholder="Entre com a Insulina Serica"         Text="{Binding InsulinaSerica}" />
-            <Entry Placeholder="Entre com o IMC (kg/m²)"             Text="{Binding BMI}" />
-            <Entry Placeholder="Entre com o Pedigree de Diabetes"    Text="{Binding DiabPedigree}" />
-            <Entry Placeholder="Entre com a pressão sanguinea(mmHg)" Text="{Binding PressaoSangue}" />
-            <Entry Placeholder="Entre com a idade do paciente"       Text="{Binding Idade}" />
+            <Entry Placeholder="Entre com a quantidade de gravidez"         Text="{Binding Gravidez}" />
+            <Entry Placeholder="Entre com o Plasma de Glicose"              Text="{Binding PlasmaG}" />
+            <Entry Placeholder="Entre com o tamanho do triceps(cm)"         Text="{Binding Triceps}" />
+            <Entry Placeholder="Entre com a Insulina Serica"                Text="{Binding InsulinaSerica}" />
+            <Entry Placeholder="Entre com o IMC (kg/m²)"                    Text="{Binding BMI}" />
+            <Entry Placeholder="Entre com a chance de ter herdado Diabetes" Text="{Binding DiabPedigree}" />
+            <Entry Placeholder="Entre com a pressão sanguinea(mmHg)"        Text="{Binding PressaoSangue}" />
+            <Entry Placeholder="Entre com a idade do paciente"              Text="{Binding Idade}" />
 
-            <Button Text="Teste" Command="{Binding ServicoCommand}"/>
+            <Button Text            ="Teste" 
+                    Command         ="{Binding ServicoCommand}"
+                    Margin="0,10"/>
 
         </StackLayout>
     </ContentPage.Content>
